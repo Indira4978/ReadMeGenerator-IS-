@@ -14,7 +14,7 @@ const questions = [
     type: "list",
     name: "License",
     message: "Which license for the project",
-    choices: ["1", "2"],
+    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
   },
   {
     type: "input",
@@ -53,9 +53,17 @@ const questions = [
   },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-  console.log(answers);
-});
+function init() {
+  inquirer.prompt(questions).then((answers) => {
+    const readMeDoc = generateMarkdown(answers);
+
+    fs.writeFile("./README.md", readMeDoc, (err) => {
+      if (err) throw err;
+      console.log("README.md file created!");
+    });
+  });
+}
+init();
 
 // // function to write README file
 // function writeToFile(fileName, data) {
