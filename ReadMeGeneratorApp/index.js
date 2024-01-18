@@ -7,7 +7,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
   {
     type: "input",
-    name: "projectName",
+    name: "title",
     message: "What is the name of the project?",
   },
   {
@@ -33,23 +33,28 @@ const questions = [
   },
   {
     type: "input",
-    name: "Learning",
+    name: "learnings",
     message: "What was learnt during the project completion:",
   },
   {
     type: "input",
-    name: "Table of content",
+    name: "table",
     message: "Insert table of Content if needed :",
   },
   {
     type: "input",
-    name: "Installation",
+    name: "installation",
     message: "Outline the steps required to install the app:",
   },
   {
     type: "input",
-    name: "Usage",
+    name: "use",
     message: "Provide instructions and examples for use:",
+  },
+  {
+    type: "input",
+    name: "credits",
+    message: "Include credits and references:",
   },
 ];
 
